@@ -1,14 +1,16 @@
-# create an index
+# Managing Documents
+
+## create an index
 ```
 PUT /product
 ```
 
-# delete an index
+## delete an index
 ```
 DELETE /product
 ```
 
-# create a document
+## create a document
 ```
 POST /product/default
 {
@@ -20,7 +22,7 @@ POST /product/default
 }
 ```
 
-# update a document
+## update a document
 ```
 PUT /product/default/1
 {
@@ -32,12 +34,12 @@ PUT /product/default/1
 }
 ```
 
-# obtain a document
+## obtain a document
 ```
 GET product/default/1
 ```
 
-# update a document
+## update a document
 ```
 PUT /product/default/1
 {
@@ -50,7 +52,7 @@ PUT /product/default/1
 }
 ```
 
-# update a document
+## update a document
 ```
 POST /product/default/1/_update
 {
@@ -62,7 +64,7 @@ POST /product/default/1/_update
 }
 ```
 
-# scripted updates
+## scripted updates
 ```
 POST /product/default/1/_update
 {
@@ -71,12 +73,12 @@ POST /product/default/1/_update
 }
 ```
 
-# delete a document
+## delete a document
 ```
 DELETE product/default/1
 ```
 
-# upsert
+## upsert
 ```
 POST product/default/1/_update
 {
@@ -87,20 +89,24 @@ POST product/default/1/_update
 }
 ```
 
-# deleting by query
+## deleting by query
 ```
 POST /product/default
 {
   "name": "Processing Events with Logstash",
   "category": "course"
 }
+```
 
+```
 POST /product/default
 {
   "name": "The Art of Scalability",
   "category": "book"
 }
+````
 
+```
 POST /product/_delete_by_query
 {
   "query": {
@@ -109,4 +115,34 @@ POST /product/_delete_by_query
     }
   }
 }
+```
+
+# Batch processing
+### adding documents
+
+```
+POST /product/default/_bulk
+{ "index": { "_id": "100" } }
+{ "price": 100 }
+{ "index": { "_id": "101" } }
+{ "price": 101 }
+```
+
+### updating and deleting documents
+
+```
+POST /product/default/_bulk
+{ "update": { "_id": "100" } }
+{ "doc": { "price": 1000 } }
+{ "delete": { "_id": "101" } }
+```
+
+### retrieving affected documents
+
+```
+GET /product/default/100
+```
+
+```
+GET /product/default/101
 ```
