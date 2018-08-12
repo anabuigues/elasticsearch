@@ -1,9 +1,9 @@
-#create an index
+# create an index
 ```
 PUT /product
 ```
 
-#delete an index
+# delete an index
 ```
 DELETE /product
 ```
@@ -20,7 +20,7 @@ POST /product/default
 }
 ```
 
-#update a document
+# update a document
 ```
 PUT /product/default/1
 {
@@ -32,12 +32,12 @@ PUT /product/default/1
 }
 ```
 
-#obtain a document
+# obtain a document
 ```
 GET product/default/1
 ```
 
-#update a document
+# update a document
 ```
 PUT /product/default/1
 {
@@ -50,7 +50,7 @@ PUT /product/default/1
 }
 ```
 
-#update a document
+# update a document
 ```
 POST /product/default/1/_update
 {
@@ -62,7 +62,7 @@ POST /product/default/1/_update
 }
 ```
 
-#scripted updates
+# scripted updates
 ```
 POST /product/default/1/_update
 {
@@ -71,12 +71,12 @@ POST /product/default/1/_update
 }
 ```
 
-#delete a document
+# delete a document
 ```
 DELETE product/default/1
 ```
 
-#upsert
+# upsert
 ```
 POST product/default/1/_update
 {
@@ -87,7 +87,7 @@ POST product/default/1/_update
 }
 ```
 
-#deleting by query
+# deleting by query
 ```
 POST /product/default
 {
