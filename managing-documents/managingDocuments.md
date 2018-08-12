@@ -1,10 +1,15 @@
 #create an index
+```
 PUT /product
+```
 
 #delete an index
+```
 DELETE /product
+```
 
 # create a document
+```
 POST /product/default
 {
   "name": "Learning elasticsearch",
@@ -13,8 +18,10 @@ POST /product/default
     "lastName": "Buigues"
   }
 }
+```
 
 #update a document
+```
 PUT /product/default/1
 {
   "name": "Learning elasticsearch con id",
@@ -23,11 +30,15 @@ PUT /product/default/1
     "lastName": "Buigues"
   }
 }
+```
 
 #obtain a document
+```
 GET product/default/1
+```
 
 #update a document
+```
 PUT /product/default/1
 {
   "name": "Learning elasticsearch con id",
@@ -37,8 +48,10 @@ PUT /product/default/1
   },
   "price" : 234
 }
+```
 
 #update a document
+```
 POST /product/default/1/_update
 {
   
@@ -47,19 +60,24 @@ POST /product/default/1/_update
     "tags": ["Elasticsearch"]
   }
 }
+```
 
 #scripted updates
+```
 POST /product/default/1/_update
 {
   
   "script": "ctx._source.price += 10"
 }
-
+```
 
 #delete a document
+```
 DELETE product/default/1
+```
 
 #upsert
+```
 POST product/default/1/_update
 {
   "script": "ctx._source.price += 10",
@@ -67,8 +85,10 @@ POST product/default/1/_update
     "price": 100
   }
 }
+```
 
 #deleting by query
+```
 POST /product/default
 {
   "name": "Processing Events with Logstash",
@@ -89,3 +109,4 @@ POST /product/_delete_by_query
     }
   }
 }
+```
