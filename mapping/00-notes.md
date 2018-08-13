@@ -38,9 +38,10 @@
 
 # Mappings parameters
 Visit: 
-[Mapping Params](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-params.html)
-[Date formats](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-date-format.html#built-in-date-formats)
-[Custom date formats](http://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html)
+
+* [Mapping Params](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-params.html)
+* [Date formats](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-date-format.html#built-in-date-formats)
+* [Custom date formats](http://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html)
 
 
 
